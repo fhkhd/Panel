@@ -58,6 +58,9 @@ flutter:
     - assets/people_black_24dp.svg
     - assets/quiz_black_24dp.svg
     - assets/request_page_black_24dp.svg
+    - assets/forward_black_24dp.svg
+    - assets/local_phone_black_24dp.svg
+    - assets/chat_black_24dp.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

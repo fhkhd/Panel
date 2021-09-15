@@ -6,6 +6,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:untitled/main.dart';
 import 'UsersList.dart';
+import 'QuestionList.dart';
+import 'Requests.dart';
 
 class DideBan extends StatefulWidget {
   const DideBan({Key? key}) : super(key: key);
@@ -23,8 +25,8 @@ class _DideBanState extends State<DideBan> {
       backgroundColor: Colors.white ,
       body: ListView(
         children: [
-          Padding(
-              padding: EdgeInsets.all(24.0),
+          SizedBox(height: 12.0),
+          Padding(padding: EdgeInsets.only(left: 24.0,right: 24.0,bottom: 12.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -39,7 +41,6 @@ class _DideBanState extends State<DideBan> {
                 Container(
                   child: Row(
                     children: <Widget>[
-                      SvgPicture.asset('assets/settings_black_24dp.svg',color: HexColor('3075FF'),),
                       Text('تنظیمات',
                         style: TextStyle(
                           color: HexColor('246DFF'),
@@ -47,6 +48,7 @@ class _DideBanState extends State<DideBan> {
                           fontSize: 16.0,
                         ),
                       ),
+                      SvgPicture.asset('assets/settings_black_24dp.svg',color: HexColor('3075FF'),),
                     ],
                   ),
                 ),
@@ -55,51 +57,27 @@ class _DideBanState extends State<DideBan> {
           ),
           SizedBox(height: 4.0,),
           Container(
-            height: 228.0,
+            height: 275.0,
             child: ListView(
               scrollDirection: Axis.vertical,
               children: <Widget>[
+                SizedBox(height: 10.0),
                 Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
                   child: Container(
                     child: generateItem(),
-                    decoration: new BoxDecoration(
-                      boxShadow: [
-                        new BoxShadow(
-                            color: HexColor('40246DFF'),
-                            blurRadius: 8,
-                            spreadRadius: 0.02,
-                            offset: Offset(0.0,0.2)
-                        ),
-                      ],
-                    ),
                   ),),
+
+
+                  SizedBox(height: 24.0),
                   Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
                   child: Container(
                     child: generateItem(),
-                    decoration: new BoxDecoration(
-                      boxShadow: [
-                        new BoxShadow(
-                            color: HexColor('40246DFF'),
-                            blurRadius: 8,
-                            spreadRadius: 0.02,
-                            offset: Offset(0.0,0.2)
-                        ),
-                      ],
-                    ),
                   ),),
+
+                SizedBox(height: 24.0),
                    Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
                    child:  Container(
                     child: generateItem(),
-                    decoration: new BoxDecoration(
-                      boxShadow: [
-                        new BoxShadow(
-                            color: HexColor('40246DFF'),
-                            blurRadius: 8,
-                            spreadRadius: 0.02,
-                            offset: Offset(0.0,0.2)
-                        ),
-                      ],
-                    ),
                   ),
                 ),
             ],
@@ -116,13 +94,13 @@ class _DideBanState extends State<DideBan> {
                   children: <Widget>[
                     buildItems('assets/people_black_24dp.svg', 'لیست کاربران',usersList()),
                     SizedBox(width: 16.0,),
-                    buildItems('assets/quiz_black_24dp.svg', 'لیست سوالات',blue()),
+                    buildItems('assets/quiz_black_24dp.svg', 'لیست سوالات',QuestionList()),
                   ],
                 ),
                 SizedBox(height: 16.0,),
                 Row(
                   children: <Widget>[
-                    buildItems('assets/request_page_black_24dp.svg', 'درخواست ها',blue()),
+                    buildItems('assets/request_page_black_24dp.svg', 'درخواست ها',Requests()),
                     SizedBox(width: 16.0,),
                     buildItems('assets/manage_accounts_black_24dp.svg', 'تنظیمات',blue()),
                   ],
@@ -135,8 +113,8 @@ class _DideBanState extends State<DideBan> {
     );
   }
 
-  Card generateItem(){
-    return Card(
+  Material generateItem(){
+    return Material(
         child: Row(
           children: <Widget>[
             Container(
@@ -219,6 +197,7 @@ class _DideBanState extends State<DideBan> {
           ),
       ),
       elevation: 10,
+      shadowColor: HexColor('40246DFF'),
     );}
 
     Card buildItems(String svgPath,String txt,Widget widget){
@@ -246,7 +225,7 @@ class _DideBanState extends State<DideBan> {
                 child: Column(
                   children: <Widget>[
                     SizedBox(height: 8.0,),
-                    SvgPicture.asset(svgPath,height: 84.0,width: 84.0,color: HexColor('246DFF'),),
+                    SvgPicture.asset(svgPath,height: 84.0,width: 84.0,),
                     SizedBox(height: 4.0),
                     Text(txt,
                       style: TextStyle(
