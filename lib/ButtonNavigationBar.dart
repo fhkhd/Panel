@@ -3,7 +3,11 @@ import 'package:hexcolor/hexcolor.dart';
 
 
 class ButtonNavigationBar extends StatelessWidget {
-  const ButtonNavigationBar({Key? key}) : super(key: key);
+
+  String _titleOfButtonNavigation;
+
+
+  ButtonNavigationBar(this._titleOfButtonNavigation);
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +20,11 @@ class ButtonNavigationBar extends StatelessWidget {
             height: 44.0,
             child: Center(
               child: Text(
-                "افزودن",
+              _titleOfButtonNavigation,
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 16.0,
                   fontFamily: 'IranianSans',
+                  fontWeight: FontWeight.w700,
                   color: Colors.white,
                 ),
                 textDirection: TextDirection.rtl,

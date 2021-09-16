@@ -107,7 +107,7 @@ class _usersListState extends State<usersList> {
           ),
         ],
       ),
-        bottomNavigationBar: ButtonNavigationBar(),
+        bottomNavigationBar: ButtonNavigationBar("افزودن کاربر"),
     );
   }
 
