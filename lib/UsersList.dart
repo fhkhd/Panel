@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'DideBan.dart';
 import 'ButtonNavigationBar.dart';
+import 'farsiNumber.dart';
 
 
 class usersList extends StatefulWidget {
@@ -13,6 +14,9 @@ class usersList extends StatefulWidget {
 }
 
 class _usersListState extends State<usersList> {
+  
+  Farsi _farsi=new Farsi();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -160,7 +164,7 @@ class _usersListState extends State<usersList> {
                   ),
                   SizedBox(width: 4.0),
                   Text(
-                    '2384653764',
+                    _farsi.replaceFarsiNumber('09301111111'),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'IranianSans',
@@ -184,7 +188,7 @@ class _usersListState extends State<usersList> {
                   ),
                   SizedBox(width: 4.0),
                   Text(
-                    'قم،آزادگان،خیابان نواب،کوچه16',
+                    _farsi.replaceFarsiNumber('قم،آزادگان،خیابان نواب،کوچه16'),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'IranianSans',
@@ -208,7 +212,7 @@ class _usersListState extends State<usersList> {
                   ),
                   SizedBox(width: 4.0),
                   Text(
-                    '42',
+                    _farsi.replaceFarsiNumber('42'),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'IranianSans',

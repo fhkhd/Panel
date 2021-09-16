@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'farsiNumber.dart';
 
 import 'DideBan.dart';
 
@@ -12,6 +13,8 @@ class Requests extends StatefulWidget {
 }
 
 class _RequestsState extends State<Requests> {
+  
+  Farsi _farsi=new Farsi();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -135,6 +138,7 @@ class _RequestsState extends State<Requests> {
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
                       fontSize: 14.0,
+                      fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.right,
                   ),
@@ -146,6 +150,7 @@ class _RequestsState extends State<Requests> {
                       fontFamily: 'IranianSans',
                       fontSize: 14.0,
                       color: HexColor('252525'),
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ],
@@ -159,6 +164,7 @@ class _RequestsState extends State<Requests> {
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
                       fontSize: 14.0,
+                      fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.right,
                   ),
@@ -170,6 +176,7 @@ class _RequestsState extends State<Requests> {
                       fontFamily: 'IranianSans',
                       fontSize: 14.0,
                       color: HexColor('252525'),
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ],
@@ -183,12 +190,13 @@ class _RequestsState extends State<Requests> {
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
                       fontSize: 14.0,
+                      fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.right,
                   ),
                   SizedBox(width: 4.0),
                   Text(
-                    'قم،آزادگان،خیابان نواب،کوچه16',
+                    _farsi.replaceFarsiNumber('قم،آزادگان،خیابان نواب،کوچه16'),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'IranianSans',

@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'ButtonNavigationBar.dart';
 import 'DideBan.dart';
+import 'farsiNumber.dart';
 
 class QuestionList extends StatefulWidget {
   const QuestionList({Key? key}) : super(key: key);
@@ -13,6 +14,9 @@ class QuestionList extends StatefulWidget {
 }
 
 class _QuestionListState extends State<QuestionList> {
+  
+  Farsi _farsi=new Farsi();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -157,7 +161,7 @@ class _QuestionListState extends State<QuestionList> {
         child: Padding(
           padding: EdgeInsets.only(right: 12.0,top: 8.0),
           child: Text(
-            number.toString()+'- مشکل بالا نیامدن ویندوز',
+            _farsi.replaceFarsiNumber(number.toString()+'- مشکل بالا نیامدن ویندوز'),
             textAlign: TextAlign.right,
             style: TextStyle(
               fontFamily: 'IranianSans',

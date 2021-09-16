@@ -8,6 +8,7 @@ import 'package:untitled/main.dart';
 import 'UsersList.dart';
 import 'QuestionList.dart';
 import 'Requests.dart';
+import 'farsiNumber.dart';
 
 class DideBan extends StatefulWidget {
   const DideBan({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class DideBan extends StatefulWidget {
 }
 
 class _DideBanState extends State<DideBan> {
-
+ Farsi _farsi=new Farsi();
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,7 @@ class _DideBanState extends State<DideBan> {
                           fontSize: 16.0,
                         ),
                       ),
-                      SvgPicture.asset('assets/settings_black_24dp.svg',color: HexColor('3075FF'),),
+                      SvgPicture.asset('assets/settings_black_24dp.svg',),
                     ],
                   ),
                 ),
@@ -64,20 +65,20 @@ class _DideBanState extends State<DideBan> {
                 SizedBox(height: 10.0),
                 Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
                   child: Container(
-                    child: generateItem(),
+                    child: generateItem('تعداد کاربران',888,'تعداد سوالات',666),
                   ),),
 
 
                   SizedBox(height: 24.0),
                   Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
                   child: Container(
-                    child: generateItem(),
+                    child: generateItem('همه درخواست ها',256,'حل شده',254),
                   ),),
 
                 SizedBox(height: 24.0),
                    Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
                    child:  Container(
-                    child: generateItem(),
+                     child: generateItem('درحال برسی',213,'لغو شده',108),
                   ),
                 ),
             ],
@@ -85,18 +86,26 @@ class _DideBanState extends State<DideBan> {
           ),
           SizedBox(height: 20.0,),
           Padding(padding: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width/2-164,
-              right: MediaQuery.of(context).size.width/2-164),
-          child: Container(
+            // left: (MediaQuery.of(context).size.width-301)/3,
+            right: MediaQuery.of(context).size.width/2-164,
+            left: MediaQuery.of(context).size.width/2-164,
+            // right: (MediaQuery.of(context).size.width-301)/3,
+            // left: 24.0,right: 24.0
+          ),
+
+            child: Container(
             child: Column(
               children: <Widget>[
                 Row(
                   children: <Widget>[
                     buildItems('assets/people_black_24dp.svg', 'لیست کاربران',usersList()),
+                    // SizedBox(width: (MediaQuery.of(context).size.width-334)/3),
+                    // SizedBox(width: (MediaQuery.of(context).size.width-309)/2,),
                     SizedBox(width: 16.0,),
                     buildItems('assets/quiz_black_24dp.svg', 'لیست سوالات',QuestionList()),
                   ],
                 ),
+                // SizedBox(height: (MediaQuery.of(context).size.height-323-330)/3),
                 SizedBox(height: 16.0,),
                 Row(
                   children: <Widget>[
@@ -113,7 +122,7 @@ class _DideBanState extends State<DideBan> {
     );
   }
 
-  Material generateItem(){
+  Material generateItem(String rtTxt,int rtNunmber,String ltTxt,int ltNumber){
     return Material(
         child: Row(
           children: <Widget>[
@@ -127,7 +136,7 @@ class _DideBanState extends State<DideBan> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'سوالات',
+                    rtTxt,
                     style: TextStyle(
                       fontSize: 16.0,
                       color: HexColor('585858'),
@@ -136,7 +145,7 @@ class _DideBanState extends State<DideBan> {
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    '153',
+                    _farsi.replaceFarsiNumber(rtNunmber.toString()),
                     style: TextStyle(
                       fontSize: 18.0,
                       color: HexColor('252525'),
@@ -168,7 +177,7 @@ class _DideBanState extends State<DideBan> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                    Text(
-                        'سوالات',
+                       ltTxt,
                      style: TextStyle(
                        fontSize: 16.0,
                        color: HexColor('585858'),
@@ -177,7 +186,7 @@ class _DideBanState extends State<DideBan> {
                      textAlign: TextAlign.center,
                     ),
                     Text(
-                      '153',
+                      _farsi.replaceFarsiNumber(ltNumber.toString()),
                       style: TextStyle(
                         fontSize: 18.0,
                         color: HexColor('252525'),
@@ -243,5 +252,6 @@ class _DideBanState extends State<DideBan> {
         )
     );
     }
+
   }
 
