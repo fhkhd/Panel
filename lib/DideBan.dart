@@ -84,7 +84,7 @@ class _DideBanState extends State<DideBan> {
             ],
           ),
           ),
-          SizedBox(height: 20.0,),
+          SizedBox(height: 12.0,),
           Padding(padding: EdgeInsets.only(
             // left: (MediaQuery.of(context).size.width-301)/3,
             right: MediaQuery.of(context).size.width/2-164,
@@ -129,9 +129,7 @@ class _DideBanState extends State<DideBan> {
             Container(
               height: 68.0,
               width: MediaQuery.of(context).size.width/2-25,
-          child: InkWell(
-            onTap: (){},
-            child: Center(
+          child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -156,7 +154,7 @@ class _DideBanState extends State<DideBan> {
                 ],
               ),
             ),
-          ),),
+          ),
             Container(
               child: Divider(
                 height: 40.0,
@@ -170,9 +168,7 @@ class _DideBanState extends State<DideBan> {
             Container(
               height: 68.0,
               width: MediaQuery.of(context).size.width/2-25,
-              child: InkWell(
-                onTap: (){},
-                child: Center(
+              child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -197,7 +193,7 @@ class _DideBanState extends State<DideBan> {
                   ],
                 ),
               ),
-            ),)
+            ),
           ],
         ),
       shape: RoundedRectangleBorder(
