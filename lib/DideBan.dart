@@ -40,17 +40,24 @@ class _DideBanState extends State<DideBan> {
                   ),
                 ),
                 Container(
-                  child: Row(
-                    children: <Widget>[
-                      Text('تنظیمات',
-                        style: TextStyle(
-                          color: HexColor('246DFF'),
-                          fontFamily: 'IranianSans',
-                          fontSize: 16.0,
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DideBan()));
+                    },
+                    child: Row(
+                      children: <Widget>[
+                        Text('تنظیمات',
+                          style: TextStyle(
+                            color: HexColor('246DFF'),
+                            fontFamily: 'IranianSans',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16.0,
+                          ),
                         ),
-                      ),
-                      SvgPicture.asset('assets/settings_black_24dp.svg',),
-                    ],
+                        SvgPicture.asset('assets/settings_black_24dp.svg',),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -111,7 +118,7 @@ class _DideBanState extends State<DideBan> {
                   children: <Widget>[
                     buildItems('assets/request_page_black_24dp.svg', 'درخواست ها',Requests()),
                     SizedBox(width: 16.0,),
-                    buildItems('assets/manage_accounts_black_24dp.svg', 'تنظیمات',blue()),
+                    buildItems('assets/manage_accounts_black_24dp.svg', 'تنظیمات',DideBan()),
                   ],
                 ),
               ],
