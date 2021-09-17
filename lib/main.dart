@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -6,7 +7,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(MaterialApp(
   title: "App",
-
     localizationsDelegates: [
       GlobalMaterialLocalizations.delegate,
       GlobalWidgetsLocalizations.delegate,
@@ -23,11 +23,20 @@ class blue extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
+    Timer(
+        Duration(seconds: 3),
+            () =>
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (BuildContext context) => DideBan())));
+
+
     return Scaffold(
         backgroundColor: HexColor('246DFF'),
         body: Column(
           children: <Widget>[
-            SizedBox(height: 200,),
+            SizedBox(height: (MediaQuery.of(context).size.height-247.25)/2,),
             Padding(padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/2-80.0,right: MediaQuery.of(context).size.width/2-80.0),
               child: InkWell(
                 onTap: (){
