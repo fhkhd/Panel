@@ -128,7 +128,6 @@ class _usersListState extends State<usersList> {
             children: [
               Row(
                 children: [
-                  SizedBox(height: 13.0,),
                   Text(
                     'نام‌کاربر:',
                     style: TextStyle(
@@ -150,7 +149,7 @@ class _usersListState extends State<usersList> {
                   ),
                 ],
               ),
-              SizedBox(height: 16.0,),
+              SizedBox(height: 8.0,),
               Row(
                 children: [
                   Text(
@@ -174,7 +173,7 @@ class _usersListState extends State<usersList> {
                   ),
                 ],
               ),
-              SizedBox(height: 16.0,),
+              SizedBox(height: 8.0,),
               Row(
                 children: [
                   Text(
@@ -198,7 +197,7 @@ class _usersListState extends State<usersList> {
                   ),
                 ],
               ),
-              SizedBox(height: 16.0,),
+              SizedBox(height: 8.0,),
               Row(
                 children: [
                   Text(

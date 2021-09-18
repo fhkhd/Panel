@@ -65,25 +65,24 @@ class _DideBanState extends State<DideBan> {
           ),
           SizedBox(height: 4.0,),
           Container(
-            height: 275.0,
+            height: 274.0,
             child: ListView(
               scrollDirection: Axis.vertical,
               children: <Widget>[
-                SizedBox(height: 10.0),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
+                Padding(padding: EdgeInsets.only(left: 24.0,right: 24.0),
                   child: Container(
                     child: generateItem('تعداد کاربران',888,'تعداد سوالات',666),
                   ),),
 
 
                   SizedBox(height: 24.0),
-                  Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
+                  Padding(padding: EdgeInsets.only(left: 24.0,right: 24.0),
                   child: Container(
                     child: generateItem('همه درخواست ها',256,'حل شده',254),
                   ),),
 
                 SizedBox(height: 24.0),
-                   Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
+                   Padding(padding: EdgeInsets.only(left: 24.0,right: 24.0),
                    child:  Container(
                      child: generateItem('درحال برسی',213,'لغو شده',108),
                   ),
@@ -91,7 +90,6 @@ class _DideBanState extends State<DideBan> {
             ],
           ),
           ),
-          SizedBox(height: 12.0,),
           Padding(padding: EdgeInsets.only(
             // left: (MediaQuery.of(context).size.width-301)/3,
             right: MediaQuery.of(context).size.width/2-164,

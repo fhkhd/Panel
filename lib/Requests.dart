@@ -131,7 +131,6 @@ class _RequestsState extends State<Requests> {
             children: [
               Row(
                 children: [
-                  SizedBox(height: 13.0,),
                   Text(
                     'نام درخواست دهنده:',
                     style: TextStyle(
@@ -155,7 +154,7 @@ class _RequestsState extends State<Requests> {
                   ),
                 ],
               ),
-              SizedBox(height: 16.0,),
+              SizedBox(height: 8.0,),
               Row(
                 children: [
                   Text(
@@ -181,7 +180,7 @@ class _RequestsState extends State<Requests> {
                   ),
                 ],
               ),
-              SizedBox(height: 16.0,),
+              SizedBox(height: 8.0,),
               Row(
                 children: [
                   Text(
@@ -207,7 +206,7 @@ class _RequestsState extends State<Requests> {
                   ),
                 ],
               ),
-              SizedBox(height: 28.0,),
+              SizedBox(height: 19.0,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
