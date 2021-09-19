@@ -45,11 +45,6 @@ class blue extends StatelessWidget {
           children: <Widget>[
             SizedBox(height: (MediaQuery.of(context).size.height-247.25)/2,),
             Padding(padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/2-80.0,right: MediaQuery.of(context).size.width/2-80.0),
-              child: InkWell(
-                onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => DideBan()));
-                },
                 child: Container(
                   height: 160.0,
                   width: 160.0,
@@ -59,7 +54,6 @@ class blue extends StatelessWidget {
                     color: Colors.white,
                     alignment: Alignment.center,),
                 ),
-              ),
             ),
             SizedBox(height: 63.25,),
             Container(
