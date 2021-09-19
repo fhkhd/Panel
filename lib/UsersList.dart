@@ -48,61 +48,10 @@ class _usersListState extends State<usersList> {
           ),
           Container(
             height: MediaQuery.of(context).size.height,
-            child: ListView(
+            child: ListView.builder(
               scrollDirection: Axis.vertical,
-              children: <Widget>[
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 10.0),
-                  child: Container(
-                    child: UserInfo(),
-                  ),
-                ),
-                SizedBox(height: 24.0,),
-
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: UserInfo(),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: UserInfo(),
-                  ),
-                ),
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: UserInfo(),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: UserInfo(),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: UserInfo(),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: UserInfo(),
-                  ),
-                ),
-                SizedBox(height: 135.0,),
-
-              ],
+              itemBuilder: (_,int index) => itemCards(),
+              itemCount: 7+1,
             ),
           ),
         ],
@@ -228,6 +177,18 @@ class _usersListState extends State<usersList> {
       elevation: 8.0,
       shadowColor: HexColor('40246DFF'),
 
+    );
+  }
+  Widget itemCards(){
+    return Column(
+      children: [
+                SizedBox(height: 24.0,),
+                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
+                  child: Container(
+                    child: UserInfo(),
+                  ),
+                ),
+      ],
     );
   }
 
