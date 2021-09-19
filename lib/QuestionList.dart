@@ -49,95 +49,10 @@ class _QuestionListState extends State<QuestionList> {
           ),
           Container(
             height: MediaQuery.of(context).size.height,
-            child: ListView(
+            child: ListView.builder(
+              itemBuilder: (_,int index) => itemQuestion(index+1),
+              itemCount: 33+2,
               scrollDirection: Axis.vertical,
-              children: <Widget>[
-            Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 10.0),
-              child: Container(
-                child: Question(1),
-              ),
-            ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Question(2),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Question(3),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Question(4),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Question(5),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Question(6),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Question(7),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Question(8),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Question(9),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Question(10),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Question(11),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Question(12),
-                  ),
-                ),
-
-                SizedBox(height: 135.0,),
-
-              ],
             ),
           ),
         ],
@@ -178,5 +93,17 @@ class _QuestionListState extends State<QuestionList> {
     );
   }
 
+  Widget itemQuestion(int input){
+    return Column(
+      children: [
+        SizedBox(height: 24.0,),
+        Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
+          child: Container(
+            child: Question(input),
+          ),
+        ),
+      ],
+    );
+  }
 
 }
