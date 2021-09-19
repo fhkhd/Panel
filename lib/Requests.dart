@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'farsiNumber.dart';
-
 import 'DideBan.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class Requests extends StatefulWidget {
   const Requests({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class Requests extends StatefulWidget {
 }
 
 class _RequestsState extends State<Requests> {
-  
+
   Farsi _farsi=new Farsi();
   @override
   Widget build(BuildContext context) {
@@ -207,39 +208,44 @@ class _RequestsState extends State<Requests> {
                 ],
               ),
               SizedBox(height: 19.0,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Text('تماس',
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        fontFamily: 'IranianSans',
-                        fontWeight: FontWeight.w400,
-                        color: HexColor('246DFF'),
-                      ),
-                        textAlign: TextAlign.right,
-                      ),
-                      SvgPicture.asset('assets/local_phone_black_24dp.svg',width: 18.0,height: 18.0,)
-                    ],
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    InkWell(
+                      onTap:  () => launch("tel://21213123123"),
+                      child: Row(
+                      children: <Widget>[
+                        Text('تماس',
+                         style: TextStyle(
+                           fontSize: 14.0,
+                           fontFamily: 'IranianSans',
+                           fontWeight: FontWeight.w400,
+                           color: HexColor('246DFF'),
                   ),
-                  Padding(padding: EdgeInsets.only(left: 12.0),
-                  child: Row(
-                    children: <Widget>[
-                      Text('پیام',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontFamily: 'IranianSans',
-                          fontWeight: FontWeight.w400,
-                          color: HexColor('246DFF'),
+                  textAlign: TextAlign.right,
+                ),
+                SvgPicture.asset('assets/local_phone_black_24dp.svg',width: 18.0,height: 18.0,)
+                ],
+              ),),
+                    InkWell(
+                      onTap: () => launch("sms://21213123123"),
+                      child: Padding(padding: EdgeInsets.only(left: 12.0),
+                        child: Row(
+                          children: <Widget>[
+                            Text('پیام',
+                              style: TextStyle(
+                                fontSize: 14.0,
+                                fontFamily: 'IranianSans',
+                                fontWeight: FontWeight.w400,
+                                color: HexColor('246DFF'),
+                              ),
+                              textAlign: TextAlign.right,
+                            ),
+                            SvgPicture.asset('assets/chat_black_24dp.svg',width: 20.0,height: 20.0,)
+                          ],
                         ),
-                        textAlign: TextAlign.right,
                       ),
-                      SvgPicture.asset('assets/chat_black_24dp.svg',width: 20.0,height: 20.0,)
-                    ],
-                  ),
-                  )
+                    ),
                 ],
               ),
             ],
