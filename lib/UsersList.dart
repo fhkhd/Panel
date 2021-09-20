@@ -21,39 +21,63 @@ class _usersListState extends State<usersList> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ListView(
-        children: [
-          SizedBox(height: 12.0),
-          Padding(padding: EdgeInsets.only(left: 24.0,right: 24.0,bottom: 12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  'لیست‌کاربران',
-                  style: TextStyle(
-                    color: HexColor('252525'),
-                    fontSize: 16.0,
-                    fontFamily: 'IranianSans',
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        actions: [
+          Container(
+            // height: MediaQuery.of(context).size.height/10,
+            width: MediaQuery.of(context).size.width,
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width/15,
+                right: MediaQuery.of(context).size.width/15,
+                // top: MediaQuery.of(context).size.height/30,
+                // bottom: MediaQuery.of(context).size.height/120,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    'لیست‌کاربران',
+                    style: TextStyle(
+                      color: HexColor('252525'),
+                      fontSize: MediaQuery.of(context).size.width/22.5,
+                      // fontSize: 16.0,
+                      fontFamily: 'IranianSans',
+                    ),
+                    textAlign: TextAlign.right,
                   ),
-                ),
-                InkWell(
-                  onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => DideBan()));
-                  },
-                  child: SvgPicture.asset('assets/forward_black_24dp.svg',height: 30,width: 30,),
-                ),
-              ],
+
+                  InkWell(
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DideBan()));
+                    },
+                    child: SvgPicture.asset('assets/forward_black_24dp.svg',
+                      height: MediaQuery.of(context).size.height/23,
+                      // height: 30,
+                      // width: 30,
+                      width: MediaQuery.of(context).size.width/7,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          Container(
+        ],
+        elevation: 0.0,
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
             height: MediaQuery.of(context).size.height,
             child: ListView.builder(
               scrollDirection: Axis.vertical,
               itemBuilder: (_,int index) => itemCards(),
               itemCount: 7+1,
             ),
-          ),
+          ),)
         ],
       ),
         bottomNavigationBar: ButtonNavigationBar("افزودن کاربر"),
@@ -69,10 +93,14 @@ class _usersListState extends State<usersList> {
         ),
       ),
       child: Container(
-        height: 136.0,
-        width: MediaQuery.of(context).size.width-48.0,
+        // height: 136.0,
+        height: MediaQuery.of(context).size.height/5,
+        width: MediaQuery.of(context).size.width-(2*(MediaQuery.of(context).size.width/15)),
         child: Padding(
-          padding: EdgeInsets.only(right: 12.0,top: 8.0),
+          padding: EdgeInsets.only(
+              right: MediaQuery.of(context).size.width/30,
+              top: 8.0
+          ),
           child: Column(
             children: [
               Row(
@@ -82,7 +110,8 @@ class _usersListState extends State<usersList> {
                     style: TextStyle(
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
+                      // fontSize: 14.0,
                     ),
                     textAlign: TextAlign.right,
                   ),
@@ -92,7 +121,7 @@ class _usersListState extends State<usersList> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                       color: HexColor('252525'),
                     ),
                   ),
@@ -106,7 +135,7 @@ class _usersListState extends State<usersList> {
                     style: TextStyle(
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                     ),
                     textAlign: TextAlign.right,
                   ),
@@ -116,7 +145,7 @@ class _usersListState extends State<usersList> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                       color: HexColor('252525'),
                     ),
                   ),
@@ -130,7 +159,7 @@ class _usersListState extends State<usersList> {
                     style: TextStyle(
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                     ),
                     textAlign: TextAlign.right,
                   ),
@@ -140,7 +169,7 @@ class _usersListState extends State<usersList> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                       color: HexColor('252525'),
                     ),
                   ),
@@ -154,7 +183,7 @@ class _usersListState extends State<usersList> {
                     style: TextStyle(
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                     ),
                     textAlign: TextAlign.right,
                   ),
@@ -164,7 +193,7 @@ class _usersListState extends State<usersList> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                       color: HexColor('252525'),
                     ),
                   ),
@@ -182,12 +211,21 @@ class _usersListState extends State<usersList> {
   Widget itemCards(){
     return Column(
       children: [
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width/15,
+                    right: MediaQuery.of(context).size.width/15,
+                // top: 10.0,
+                    top: MediaQuery.of(context).size.height/67,
+                ),
                   child: Container(
                     child: UserInfo(),
                   ),
                 ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height/49,
+        // height: 14.0,
+        ),
       ],
     );
   }

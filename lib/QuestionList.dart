@@ -21,40 +21,57 @@ class _QuestionListState extends State<QuestionList> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ListView(
-        children: [
-          SizedBox(height: 12.0,),
-          Padding(
-            padding: EdgeInsets.only(left: 24.0,right: 24.0,bottom: 12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  'لیست سوالات پیش‌فرض',
-                  style: TextStyle(
-                    color: HexColor('252525'),
-                    fontSize: 16.0,
-                    fontFamily: 'IranianSans',
-                  ),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        actions: [
+          Container(
+            // height: MediaQuery.of(context).size.height/10,
+            width: MediaQuery.of(context).size.width,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  left: 24.0,
+                  right: 24.0,
+                  // top: MediaQuery.of(context).size.height/30,
+                  // bottom: MediaQuery.of(context).size.height/120,
                 ),
-                InkWell(
-                  onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => DideBan()));
-                  },
-                  child: SvgPicture.asset('assets/forward_black_24dp.svg',height: 30,width: 30,),
-                ),
-              ],
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'لیست سوالات پیش‌فرض',
+                      style: TextStyle(
+                        color: HexColor('252525'),
+                        fontSize: 16.0,
+                        fontFamily: 'IranianSans',
+                      ),
+                      textAlign: TextAlign.right,
+                    ),
+
+                    InkWell(
+                      onTap: (){
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => DideBan()));
+                      },
+                      child: SvgPicture.asset('assets/forward_black_24dp.svg',height: 30,width: 30,),
+                    ),
+                  ],
+              ),
             ),
           ),
-          Container(
+        ],
+        elevation: 0.0,
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
             height: MediaQuery.of(context).size.height,
             child: ListView.builder(
               itemBuilder: (_,int index) => itemQuestion(index+1),
-              itemCount: 33+2,
+              itemCount: 35,
               scrollDirection: Axis.vertical,
             ),
-          ),
+          ),)
         ],
       ),
       bottomNavigationBar: ButtonNavigationBar("افزودن درخواست(پیش فرض)"),
@@ -96,12 +113,12 @@ class _QuestionListState extends State<QuestionList> {
   Widget itemQuestion(int input){
     return Column(
       children: [
-        SizedBox(height: 24.0,),
-        Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
+        Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 10),
           child: Container(
             child: Question(input),
           ),
         ),
+        SizedBox(height: 14,),
       ],
     );
   }
