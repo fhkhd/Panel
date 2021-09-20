@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -8,6 +9,17 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/services.dart';
 
 void main() => runApp(MaterialApp(
+
+    builder: (context,child) {
+      return MediaQuery(
+        child: child!,
+        data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+      );
+    },
+
+
+  
+
   title: "App",
     localizationsDelegates: [
       GlobalMaterialLocalizations.delegate,
@@ -39,12 +51,15 @@ class blue extends StatelessWidget {
                 builder: (BuildContext context) => DideBan())));
 
 
+
     return Scaffold(
         backgroundColor: HexColor('246DFF'),
         body: Column(
           children: <Widget>[
             SizedBox(height: (MediaQuery.of(context).size.height-247.25)/2,),
-            Padding(padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/2-80.0,right: MediaQuery.of(context).size.width/2-80.0),
+            Padding(padding: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width/2-80.0,
+                right: MediaQuery.of(context).size.width/2-80.0),
                 child: Container(
                   height: 160.0,
                   width: 160.0,
