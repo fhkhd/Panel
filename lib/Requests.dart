@@ -20,95 +20,58 @@ class _RequestsState extends State<Requests> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ListView(
-        children: [
-          SizedBox(height: 12.0,),
-          Padding(
-            padding: EdgeInsets.only(left: 24.0,right: 24.0,bottom: 12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  'لیست درخواست های کاربران',
-                  style: TextStyle(
-                    color: HexColor('252525'),
-                    fontSize: 16.0,
-                    fontFamily: 'IranianSans',
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        actions: [
+          Container(
+            // height: MediaQuery.of(context).size.height/10,
+            width: MediaQuery.of(context).size.width,
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: 24.0,
+                right: 24.0,
+                // top: MediaQuery.of(context).size.height/30,
+                // bottom: MediaQuery.of(context).size.height/120,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    'لیست درخواست های کاربران',
+                    style: TextStyle(
+                      color: HexColor('252525'),
+                      fontSize: 16.0,
+                      fontFamily: 'IranianSans',
+                    ),
+                    textAlign: TextAlign.right,
                   ),
-                ),
-                InkWell(
-                  onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => DideBan()));
-                  },
-                  child: SvgPicture.asset('assets/forward_black_24dp.svg',height: 30,width: 30,),
-                ),
-              ],
+
+                  InkWell(
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DideBan()));
+                    },
+                    child: SvgPicture.asset('assets/forward_black_24dp.svg',height: 30,width: 30,),
+                  ),
+                ],
+              ),
             ),
           ),
-          Container(
-            height: MediaQuery.of(context).size.height,
-            child: ListView(
+        ],
+        elevation: 0.0,
+      ),
+      body: Column(
+        children: [
+
+          Expanded(
+            child: Container(
+            height: (MediaQuery.of(context).size.height)-(MediaQuery.of(context).size.height/5),
+            child: ListView.builder(
               scrollDirection: Axis.vertical,
-              children: <Widget>[
-            Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 10.0),
-              child: Request(),
+              itemBuilder: (context, index) => itemRequest(),
+              itemCount: 5,
             ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Request(),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Request(),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Request(),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Request(),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Request(),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Request(),
-                  ),
-                ),
-
-                SizedBox(height: 24.0,),
-                Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                  child: Container(
-                    child: Request(),
-                  ),
-                ),
-
-                SizedBox(height: 91.0,),
-
-              ],
-            ),
-          )
+          ),)
         ],
       ),
     );
@@ -124,7 +87,7 @@ class _RequestsState extends State<Requests> {
         ),
       ),
       child: Container(
-        height: 144.0,
+        height: 150.0,
         width: MediaQuery.of(context).size.width-48.0,
         child: Padding(
           padding: EdgeInsets.only(right: 12.0,top: 8.0),
@@ -254,6 +217,20 @@ class _RequestsState extends State<Requests> {
       ),
       elevation: 8.0,
       shadowColor: HexColor('40246DFF'),
+    );
+  }
+
+  Widget itemRequest(){
+    return Column(
+      children: [
+        Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0,
+        top: 10.0),
+          child: Container(
+            child: Request(),
+          ),
+        ),
+        SizedBox(height: 14.0,),
+      ],
     );
   }
 
