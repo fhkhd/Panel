@@ -22,39 +22,46 @@ class _QuestionListState extends State<QuestionList> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        toolbarHeight: MediaQuery.of(context).size.height/12.35,
         backgroundColor: Colors.white,
         actions: [
           Container(
             // height: MediaQuery.of(context).size.height/10,
             width: MediaQuery.of(context).size.width,
-              child: Padding(
-                padding: EdgeInsets.only(
-                  left: 24.0,
-                  right: 24.0,
-                  // top: MediaQuery.of(context).size.height/30,
-                  // bottom: MediaQuery.of(context).size.height/120,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'لیست سوالات پیش‌فرض',
-                      style: TextStyle(
-                        color: HexColor('252525'),
-                        fontSize: 16.0,
-                        fontFamily: 'IranianSans',
-                      ),
-                      textAlign: TextAlign.right,
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width/15,
+                right: MediaQuery.of(context).size.width/15,
+                // top: MediaQuery.of(context).size.height/30,
+                // bottom: MediaQuery.of(context).size.height/120,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    'لیست سوالات پیش‌فرض',
+                    style: TextStyle(
+                      color: HexColor('252525'),
+                      fontSize: MediaQuery.of(context).size.width/22.5,
+                      // fontSize: 16.0,
+                      fontFamily: 'IranianSans',
                     ),
+                    textAlign: TextAlign.right,
+                  ),
 
-                    InkWell(
-                      onTap: (){
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => DideBan()));
-                      },
-                      child: SvgPicture.asset('assets/forward_black_24dp.svg',height: 30,width: 30,),
+                  InkWell(
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DideBan()));
+                    },
+                    child: SvgPicture.asset('assets/forward_black_24dp.svg',
+                      height: MediaQuery.of(context).size.height/23,
+                      // height: 30,
+                      // width: 30,
+                      width: MediaQuery.of(context).size.width/7,
                     ),
-                  ],
+                  ),
+                ],
               ),
             ),
           ),
@@ -88,16 +95,22 @@ class _QuestionListState extends State<QuestionList> {
         ),
       ),
       child: Container(
-        height: 40.0,
-        width: MediaQuery.of(context).size.width-48.0,
+        // height: 40.0,
+        width: MediaQuery.of(context).size.width-(2*(MediaQuery.of(context).size.width/15)),
         child: Padding(
-          padding: EdgeInsets.only(right: 12.0,top: 8.0),
+          padding: EdgeInsets.only(
+            right: MediaQuery.of(context).size.width/30,
+              // top: 8.0,
+            top: MediaQuery.of(context).size.height/87,
+            bottom: MediaQuery.of(context).size.height/87,
+          ),
           child: Text(
             _farsi.replaceFarsiNumber(number.toString()+'- مشکل بالا نیامدن ویندوز'),
             textAlign: TextAlign.right,
             style: TextStyle(
               fontFamily: 'IranianSans',
-              fontSize: 14.0,
+              // fontSize: 14.0,
+              fontSize: MediaQuery.of(context).size.width/25.75,
               color: HexColor('252525'),
             ),
           ),
@@ -113,12 +126,18 @@ class _QuestionListState extends State<QuestionList> {
   Widget itemQuestion(int input){
     return Column(
       children: [
-        Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 10),
+        Padding(padding: EdgeInsets.only(
+          left: MediaQuery.of(context).size.width/15,
+          right: MediaQuery.of(context).size.width/15,
+          // top: 10.0,
+          top: MediaQuery.of(context).size.height/67,),
           child: Container(
             child: Question(input),
           ),
         ),
-        SizedBox(height: 14,),
+        SizedBox(
+          height: MediaQuery.of(context).size.height/49,
+        ),
       ],
     );
   }

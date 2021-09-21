@@ -22,6 +22,7 @@ class _usersListState extends State<usersList> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        toolbarHeight: MediaQuery.of(context).size.height/12.35,
         backgroundColor: Colors.white,
         actions: [
           Container(
@@ -75,7 +76,7 @@ class _usersListState extends State<usersList> {
             child: ListView.builder(
               scrollDirection: Axis.vertical,
               itemBuilder: (_,int index) => itemCards(),
-              itemCount: 7+1,
+              itemCount: 8,
             ),
           ),)
         ],
@@ -94,12 +95,15 @@ class _usersListState extends State<usersList> {
       ),
       child: Container(
         // height: 136.0,
-        height: MediaQuery.of(context).size.height/5,
+        // height: MediaQuery.of(context).size.height/5,
         width: MediaQuery.of(context).size.width-(2*(MediaQuery.of(context).size.width/15)),
         child: Padding(
           padding: EdgeInsets.only(
               right: MediaQuery.of(context).size.width/30,
-              top: 8.0
+              top: MediaQuery.of(context).size.height/87,
+            // top: 8.0,
+            bottom: MediaQuery.of(context).size.height/87,
+
           ),
           child: Column(
             children: [
@@ -115,7 +119,8 @@ class _usersListState extends State<usersList> {
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  SizedBox(width: 4.0),
+                  // SizedBox(width: 4.0),
+                  SizedBox(width: MediaQuery.of(context).size.width/120,),
                   Text(
                     'محمد خواستار',
                     textAlign: TextAlign.center,
@@ -127,7 +132,10 @@ class _usersListState extends State<usersList> {
                   ),
                 ],
               ),
-              SizedBox(height: 8.0,),
+              // SizedBox(height: 8.0,),
+              SizedBox(height: MediaQuery.of(context).size.height/87,),
+              // SizedBox(height: MediaQuery.of(context).size.height/89,),
+
               Row(
                 children: [
                   Text(
@@ -139,7 +147,8 @@ class _usersListState extends State<usersList> {
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  SizedBox(width: 4.0),
+                  // SizedBox(width: 4.0),
+                  SizedBox(width: MediaQuery.of(context).size.width/120,),
                   Text(
                     _farsi.replaceFarsiNumber('09301111111'),
                     textAlign: TextAlign.center,
@@ -151,7 +160,7 @@ class _usersListState extends State<usersList> {
                   ),
                 ],
               ),
-              SizedBox(height: 8.0,),
+              SizedBox(height: MediaQuery.of(context).size.height/87,),
               Row(
                 children: [
                   Text(
@@ -163,7 +172,8 @@ class _usersListState extends State<usersList> {
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  SizedBox(width: 4.0),
+                  // SizedBox(width: 4.0),
+                  SizedBox(width: MediaQuery.of(context).size.width/120,),
                   Text(
                     _farsi.replaceFarsiNumber('قم،آزادگان،خیابان نواب،کوچه16'),
                     textAlign: TextAlign.center,
@@ -175,7 +185,7 @@ class _usersListState extends State<usersList> {
                   ),
                 ],
               ),
-              SizedBox(height: 8.0,),
+              SizedBox(height: MediaQuery.of(context).size.height/87,),
               Row(
                 children: [
                   Text(
@@ -187,7 +197,8 @@ class _usersListState extends State<usersList> {
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  SizedBox(width: 4.0),
+                  // SizedBox(width: 4.0),
+                  SizedBox(width: MediaQuery.of(context).size.width/120,),
                   Text(
                     _farsi.replaceFarsiNumber('42'),
                     textAlign: TextAlign.center,

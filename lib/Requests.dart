@@ -21,6 +21,7 @@ class _RequestsState extends State<Requests> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        toolbarHeight: MediaQuery.of(context).size.height/12.35,
         backgroundColor: Colors.white,
         actions: [
           Container(
@@ -28,8 +29,8 @@ class _RequestsState extends State<Requests> {
             width: MediaQuery.of(context).size.width,
             child: Padding(
               padding: EdgeInsets.only(
-                left: 24.0,
-                right: 24.0,
+                left: MediaQuery.of(context).size.width/15,
+                right: MediaQuery.of(context).size.width/15,
                 // top: MediaQuery.of(context).size.height/30,
                 // bottom: MediaQuery.of(context).size.height/120,
               ),
@@ -40,7 +41,8 @@ class _RequestsState extends State<Requests> {
                     'لیست درخواست های کاربران',
                     style: TextStyle(
                       color: HexColor('252525'),
-                      fontSize: 16.0,
+                      fontSize: MediaQuery.of(context).size.width/22.5,
+                      // fontSize: 16.0,
                       fontFamily: 'IranianSans',
                     ),
                     textAlign: TextAlign.right,
@@ -51,7 +53,12 @@ class _RequestsState extends State<Requests> {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => DideBan()));
                     },
-                    child: SvgPicture.asset('assets/forward_black_24dp.svg',height: 30,width: 30,),
+                    child: SvgPicture.asset('assets/forward_black_24dp.svg',
+                      height: MediaQuery.of(context).size.height/23,
+                      // height: 30,
+                      // width: 30,
+                      width: MediaQuery.of(context).size.width/7,
+                    ),
                   ),
                 ],
               ),
@@ -87,10 +94,15 @@ class _RequestsState extends State<Requests> {
         ),
       ),
       child: Container(
-        height: 150.0,
-        width: MediaQuery.of(context).size.width-48.0,
+        // height: 150.0,
+        width: MediaQuery.of(context).size.width-(2*(MediaQuery.of(context).size.width/15)),
         child: Padding(
-          padding: EdgeInsets.only(right: 12.0,top: 8.0),
+          padding: EdgeInsets.only(
+            right: MediaQuery.of(context).size.width/30,
+            top: MediaQuery.of(context).size.height/87,
+            // top: 8.0,
+            bottom: MediaQuery.of(context).size.height/87,
+          ),
           child: Column(
             children: [
               Row(
@@ -100,25 +112,29 @@ class _RequestsState extends State<Requests> {
                     style: TextStyle(
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      // fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                       fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  SizedBox(width: 4.0),
+                  // SizedBox(width: 4.0),
+                  SizedBox(width: MediaQuery.of(context).size.width/120,),
+
                   Text(
                     'محمد خواستار',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                       color: HexColor('252525'),
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 8.0,),
+              // SizedBox(height: 8.0,),
+              SizedBox(height: MediaQuery.of(context).size.height/87,),
               Row(
                 children: [
                   Text(
@@ -126,25 +142,25 @@ class _RequestsState extends State<Requests> {
                     style: TextStyle(
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                       fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  SizedBox(width: 4.0),
+                  SizedBox(width: MediaQuery.of(context).size.width/120,),
                   Text(
                     'درحال برسی',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                       color: HexColor('252525'),
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 8.0,),
+              SizedBox(height: MediaQuery.of(context).size.height/87,),
               Row(
                 children: [
                   Text(
@@ -152,25 +168,26 @@ class _RequestsState extends State<Requests> {
                     style: TextStyle(
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                       fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  SizedBox(width: 4.0),
+                  SizedBox(width: MediaQuery.of(context).size.width/120,),
                   Text(
                     _farsi.replaceFarsiNumber('قم،آزادگان،خیابان نواب،کوچه16'),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'IranianSans',
-                      fontSize: 14.0,
+                      fontSize: MediaQuery.of(context).size.width/25.75,
                       fontWeight: FontWeight.w500,
                       color: HexColor('252525'),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 19.0,),
+              // SizedBox(height: 19.0,),
+              SizedBox(height: MediaQuery.of(context).size.height/87,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -180,31 +197,41 @@ class _RequestsState extends State<Requests> {
                       children: <Widget>[
                         Text('تماس',
                          style: TextStyle(
-                           fontSize: 14.0,
+                           fontSize: MediaQuery.of(context).size.width/25.75,
                            fontFamily: 'IranianSans',
                            fontWeight: FontWeight.w400,
                            color: HexColor('246DFF'),
                   ),
                   textAlign: TextAlign.right,
                 ),
-                SvgPicture.asset('assets/local_phone_black_24dp.svg',width: 18.0,height: 18.0,)
+                SvgPicture.asset('assets/local_phone_black_24dp.svg',
+                  // width: 18.0,
+                  width: MediaQuery.of(context).size.width/20.0,
+                  // height: 18.0,
+                  height: MediaQuery.of(context).size.height/38,
+                )
                 ],
               ),),
                     InkWell(
                       onTap: () => launch("sms://21213123123"),
-                      child: Padding(padding: EdgeInsets.only(left: 12.0),
+                      child: Padding(padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width/30),
                         child: Row(
                           children: <Widget>[
                             Text('پیام',
                               style: TextStyle(
-                                fontSize: 14.0,
+                                fontSize: MediaQuery.of(context).size.width/25.75,
                                 fontFamily: 'IranianSans',
                                 fontWeight: FontWeight.w400,
                                 color: HexColor('246DFF'),
                               ),
                               textAlign: TextAlign.right,
                             ),
-                            SvgPicture.asset('assets/chat_black_24dp.svg',width: 20.0,height: 20.0,)
+                            SvgPicture.asset('assets/chat_black_24dp.svg',
+                              width: MediaQuery.of(context).size.width/18.75,
+                              // height: 20.0,
+                              height: MediaQuery.of(context).size.height/35,
+                            )
                           ],
                         ),
                       ),
@@ -223,13 +250,19 @@ class _RequestsState extends State<Requests> {
   Widget itemRequest(){
     return Column(
       children: [
-        Padding(padding: EdgeInsets.only(left: 20.0,right: 20.0,
-        top: 10.0),
+        Padding(padding: EdgeInsets.only(
+          left: MediaQuery.of(context).size.width/15,
+          right: MediaQuery.of(context).size.width/15,
+          // top: 10.0,
+          top: MediaQuery.of(context).size.height/67,
+        ),
           child: Container(
             child: Request(),
           ),
         ),
-        SizedBox(height: 14.0,),
+        SizedBox(
+          height: MediaQuery.of(context).size.height/49,
+        ),
       ],
     );
   }
