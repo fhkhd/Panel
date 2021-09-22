@@ -214,8 +214,8 @@ class _usersListState extends State<usersList> {
           ),
         ),
         ),
-      elevation: 8.0,
-      shadowColor: HexColor('40246DFF'),
+      // elevation: 8.0,
+      // shadowColor: HexColor('246DFF'),
 
     );
   }
@@ -231,6 +231,16 @@ class _usersListState extends State<usersList> {
                 ),
                   child: Container(
                     child: UserInfo(),
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromRGBO(36, 109, 255, 0.25),
+                          // spreadRadius: 1/10000,
+                          blurRadius: 8,
+                          offset: Offset(0,4),
+                        )
+                      ],
+                    ),
                   ),
                 ),
         SizedBox(

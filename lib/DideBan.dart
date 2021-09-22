@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:untitled/main.dart';
@@ -98,6 +99,16 @@ class _DideBanState extends State<DideBan> {
                     right: MediaQuery.of(context).size.width/15),
                   child: Container(
                     child: generateItem('تعداد کاربران',888,'تعداد سوالات',666),
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromRGBO(36, 109, 255, 0.25),
+                          // spreadRadius: 1/10000,
+                          blurRadius: 8,
+                          offset: Offset(0,2),
+                        )
+                      ],
+                    ),
                   ),),
 
 
@@ -107,6 +118,16 @@ class _DideBanState extends State<DideBan> {
                       right: MediaQuery.of(context).size.width/15),
                   child: Container(
                     child: generateItem('همه درخواست ها',256,'حل شده',254),
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromRGBO(36, 109, 255, 0.25),
+                          // spreadRadius: 1/10000,
+                          blurRadius: 8,
+                          offset: Offset(0,2),
+                        )
+                      ],
+                    ),
                   ),),
 
                 SizedBox(height: MediaQuery.of(context).size.height/30,),
@@ -115,6 +136,16 @@ class _DideBanState extends State<DideBan> {
                        right: MediaQuery.of(context).size.width/15),
                    child:  Container(
                      child: generateItem('درحال برسی',213,'لغو شده',108),
+                     decoration: BoxDecoration(
+                       boxShadow: [
+                         BoxShadow(
+                           color: Color.fromRGBO(36, 109, 255, 0.25),
+                           // spreadRadius: 1/10000,
+                           blurRadius: 8,
+                           offset: Offset(0,2),
+                         )
+                       ],
+                     ),
                   ),
                 ),
             ],
@@ -257,8 +288,8 @@ class _DideBanState extends State<DideBan> {
               Radius.circular(8.0),
           ),
       ),
-      elevation: 10,
-      shadowColor: HexColor('40246DFF'),
+      // elevation: 10,
+      // shadowColor: HexColor('246DFF'),
     );}
 
     Card buildItems(String svgPath,String txt,Widget widget){

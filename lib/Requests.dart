@@ -242,8 +242,8 @@ class _RequestsState extends State<Requests> {
           ),
         ),
       ),
-      elevation: 8.0,
-      shadowColor: HexColor('40246DFF'),
+      // elevation: 8.0,
+      // shadowColor: HexColor('40246DFF'),
     );
   }
 
@@ -258,6 +258,16 @@ class _RequestsState extends State<Requests> {
         ),
           child: Container(
             child: Request(),
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(36, 109, 255, 0.25),
+                  // spreadRadius: 1/10000,
+                  blurRadius: 8,
+                  offset: Offset(0,4),
+                )
+              ],
+            ),
           ),
         ),
         SizedBox(

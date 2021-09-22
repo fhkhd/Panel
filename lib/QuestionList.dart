@@ -117,8 +117,8 @@ class _QuestionListState extends State<QuestionList> {
 
         ),
       ),
-      elevation: 8.0,
-      shadowColor: HexColor('40246DFF'),
+      // elevation: 8.0,
+      // shadowColor: HexColor('40246DFF'),
 
     );
   }
@@ -133,6 +133,16 @@ class _QuestionListState extends State<QuestionList> {
           top: MediaQuery.of(context).size.height/67,),
           child: Container(
             child: Question(input),
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(36, 109, 255, 0.25),
+                  // spreadRadius: 1/10000,
+                  blurRadius: 8,
+                  offset: Offset(0,4),
+                )
+              ],
+            ),
           ),
         ),
         SizedBox(
