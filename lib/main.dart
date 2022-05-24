@@ -50,8 +50,6 @@ class blue extends StatelessWidget {
             Navigator.of(context).pushReplacement(MaterialPageRoute(
                 builder: (BuildContext context) => DideBan())));
 
-
-
     return Scaffold(
         backgroundColor: HexColor('246DFF'),
         body: Column(

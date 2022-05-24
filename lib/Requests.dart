@@ -25,14 +25,11 @@ class _RequestsState extends State<Requests> {
         backgroundColor: Colors.white,
         actions: [
           Container(
-            // height: MediaQuery.of(context).size.height/10,
             width: MediaQuery.of(context).size.width,
             child: Padding(
               padding: EdgeInsets.only(
                 left: MediaQuery.of(context).size.width/15,
                 right: MediaQuery.of(context).size.width/15,
-                // top: MediaQuery.of(context).size.height/30,
-                // bottom: MediaQuery.of(context).size.height/120,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,7 +39,6 @@ class _RequestsState extends State<Requests> {
                     style: TextStyle(
                       color: HexColor('252525'),
                       fontSize: MediaQuery.of(context).size.width/22.5,
-                      // fontSize: 16.0,
                       fontFamily: 'IranianSans',
                     ),
                     textAlign: TextAlign.right,
@@ -55,8 +51,6 @@ class _RequestsState extends State<Requests> {
                     },
                     child: SvgPicture.asset('assets/forward_black_24dp.svg',
                       height: MediaQuery.of(context).size.height/23,
-                      // height: 30,
-                      // width: 30,
                       width: MediaQuery.of(context).size.width/7,
                     ),
                   ),
@@ -94,13 +88,11 @@ class _RequestsState extends State<Requests> {
         ),
       ),
       child: Container(
-        // height: 150.0,
         width: MediaQuery.of(context).size.width-(2*(MediaQuery.of(context).size.width/15)),
         child: Padding(
           padding: EdgeInsets.only(
             right: MediaQuery.of(context).size.width/30,
             top: MediaQuery.of(context).size.height/87,
-            // top: 8.0,
             bottom: MediaQuery.of(context).size.height/87,
           ),
           child: Column(
@@ -112,13 +104,11 @@ class _RequestsState extends State<Requests> {
                     style: TextStyle(
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
-                      // fontSize: 14.0,
                       fontSize: MediaQuery.of(context).size.width/25.75,
                       fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  // SizedBox(width: 4.0),
                   SizedBox(width: MediaQuery.of(context).size.width/120,),
 
                   Text(
@@ -133,7 +123,6 @@ class _RequestsState extends State<Requests> {
                   ),
                 ],
               ),
-              // SizedBox(height: 8.0,),
               SizedBox(height: MediaQuery.of(context).size.height/87,),
               Row(
                 children: [
@@ -186,7 +175,6 @@ class _RequestsState extends State<Requests> {
                   ),
                 ],
               ),
-              // SizedBox(height: 19.0,),
               SizedBox(height: MediaQuery.of(context).size.height/87,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -205,9 +193,7 @@ class _RequestsState extends State<Requests> {
                   textAlign: TextAlign.right,
                 ),
                 SvgPicture.asset('assets/local_phone_black_24dp.svg',
-                  // width: 18.0,
                   width: MediaQuery.of(context).size.width/20.0,
-                  // height: 18.0,
                   height: MediaQuery.of(context).size.height/38,
                 )
                 ],
@@ -229,7 +215,6 @@ class _RequestsState extends State<Requests> {
                             ),
                             SvgPicture.asset('assets/chat_black_24dp.svg',
                               width: MediaQuery.of(context).size.width/18.75,
-                              // height: 20.0,
                               height: MediaQuery.of(context).size.height/35,
                             )
                           ],
@@ -253,7 +238,6 @@ class _RequestsState extends State<Requests> {
         Padding(padding: EdgeInsets.only(
           left: MediaQuery.of(context).size.width/15,
           right: MediaQuery.of(context).size.width/15,
-          // top: 10.0,
           top: MediaQuery.of(context).size.height/67,
         ),
           child: Container(
@@ -262,7 +246,6 @@ class _RequestsState extends State<Requests> {
               boxShadow: [
                 BoxShadow(
                   color: Color.fromRGBO(36, 109, 255, 0.25),
-                  // spreadRadius: 1/10000,
                   blurRadius: 8,
                   offset: Offset(0,4),
                 )

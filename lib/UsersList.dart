@@ -26,14 +26,11 @@ class _usersListState extends State<usersList> {
         backgroundColor: Colors.white,
         actions: [
           Container(
-            // height: MediaQuery.of(context).size.height/10,
             width: MediaQuery.of(context).size.width,
             child: Padding(
               padding: EdgeInsets.only(
                 left: MediaQuery.of(context).size.width/15,
                 right: MediaQuery.of(context).size.width/15,
-                // top: MediaQuery.of(context).size.height/30,
-                // bottom: MediaQuery.of(context).size.height/120,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -43,7 +40,6 @@ class _usersListState extends State<usersList> {
                     style: TextStyle(
                       color: HexColor('252525'),
                       fontSize: MediaQuery.of(context).size.width/22.5,
-                      // fontSize: 16.0,
                       fontFamily: 'IranianSans',
                     ),
                     textAlign: TextAlign.right,
@@ -56,8 +52,6 @@ class _usersListState extends State<usersList> {
                     },
                     child: SvgPicture.asset('assets/forward_black_24dp.svg',
                       height: MediaQuery.of(context).size.height/23,
-                      // height: 30,
-                      // width: 30,
                       width: MediaQuery.of(context).size.width/7,
                     ),
                   ),
@@ -94,8 +88,6 @@ class _usersListState extends State<usersList> {
         ),
       ),
       child: Container(
-        // height: 136.0,
-        // height: MediaQuery.of(context).size.height/5,
         width: MediaQuery.of(context).size.width-(2*(MediaQuery.of(context).size.width/15)),
         child: Padding(
           padding: EdgeInsets.only(
@@ -115,11 +107,9 @@ class _usersListState extends State<usersList> {
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
                       fontSize: MediaQuery.of(context).size.width/25.75,
-                      // fontSize: 14.0,
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  // SizedBox(width: 4.0),
                   SizedBox(width: MediaQuery.of(context).size.width/120,),
                   Text(
                     'محمد خواستار',
@@ -132,10 +122,7 @@ class _usersListState extends State<usersList> {
                   ),
                 ],
               ),
-              // SizedBox(height: 8.0,),
               SizedBox(height: MediaQuery.of(context).size.height/87,),
-              // SizedBox(height: MediaQuery.of(context).size.height/89,),
-
               Row(
                 children: [
                   Text(
@@ -147,7 +134,6 @@ class _usersListState extends State<usersList> {
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  // SizedBox(width: 4.0),
                   SizedBox(width: MediaQuery.of(context).size.width/120,),
                   Text(
                     _farsi.replaceFarsiNumber('09301111111'),
@@ -172,7 +158,6 @@ class _usersListState extends State<usersList> {
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  // SizedBox(width: 4.0),
                   SizedBox(width: MediaQuery.of(context).size.width/120,),
                   Text(
                     _farsi.replaceFarsiNumber('قم،آزادگان،خیابان نواب،کوچه16'),
@@ -197,7 +182,6 @@ class _usersListState extends State<usersList> {
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  // SizedBox(width: 4.0),
                   SizedBox(width: MediaQuery.of(context).size.width/120,),
                   Text(
                     _farsi.replaceFarsiNumber('42'),
@@ -214,41 +198,35 @@ class _usersListState extends State<usersList> {
           ),
         ),
         ),
-      // elevation: 8.0,
-      // shadowColor: HexColor('246DFF'),
-
     );
   }
   Widget itemCards(){
     return Column(
       children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width/15,
-                    right: MediaQuery.of(context).size.width/15,
-                // top: 10.0,
-                    top: MediaQuery.of(context).size.height/67,
-                ),
-                  child: Container(
-                    child: UserInfo(),
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromRGBO(36, 109, 255, 0.25),
-                          // spreadRadius: 1/10000,
-                          blurRadius: 8,
-                          offset: Offset(0,4),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+        Padding(
+          padding: EdgeInsets.only(
+            left: MediaQuery.of(context).size.width/15,
+            right: MediaQuery.of(context).size.width/15,
+            top: MediaQuery.of(context).size.height/67,
+          ),
+          child: Container(
+            child: UserInfo(),
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(36, 109, 255, 0.25),
+                  blurRadius: 8,
+                  offset: Offset(0,4),
+                )
+              ],
+            ),
+          ),
+        ),
         SizedBox(
           height: MediaQuery.of(context).size.height/49,
-        // height: 14.0,
+          // height: 14.0,
         ),
       ],
     );
   }
-
 }

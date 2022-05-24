@@ -26,7 +26,7 @@ dependencies:
     sdk: flutter
   hexcolor: ^2.0.5
   flutter_svg: ^0.22.0
-  flutter_localizations: # Add this line
+  flutter_localizations: # Add this linefflutt
     sdk: flutter         # Add this line
 
 

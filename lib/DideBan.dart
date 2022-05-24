@@ -31,14 +31,11 @@ class _DideBanState extends State<DideBan> {
         backgroundColor: Colors.white,
         actions: [
           Container(
-            // height: MediaQuery.of(context).size.height/10,
             width: MediaQuery.of(context).size.width,
             child: Padding(
               padding: EdgeInsets.only(
                 left: MediaQuery.of(context).size.width/15.0,
                 right: MediaQuery.of(context).size.width/15.0,
-                // top: MediaQuery.of(context).size.height/30,
-                // bottom: MediaQuery.of(context).size.height/120,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,12 +83,9 @@ class _DideBanState extends State<DideBan> {
       ),
       body: Column(
         children: [
-          // SizedBox(height: 4.0,),
           Container(
-            // color: Colors.red,
             height: (MediaQuery.of(context).size.height-MediaQuery.of(context).size.height/12.35)/2.15,
             child: Column(
-              // scrollDirection: Axis.vertical,
               children: <Widget>[
                 SizedBox(height: MediaQuery.of(context).size.height/150,),
                 Padding(padding: EdgeInsets.only(
@@ -103,7 +97,6 @@ class _DideBanState extends State<DideBan> {
                       boxShadow: [
                         BoxShadow(
                           color: Color.fromRGBO(36, 109, 255, 0.25),
-                          // spreadRadius: 1/10000,
                           blurRadius: 8,
                           offset: Offset(0,2),
                         )
@@ -122,7 +115,6 @@ class _DideBanState extends State<DideBan> {
                       boxShadow: [
                         BoxShadow(
                           color: Color.fromRGBO(36, 109, 255, 0.25),
-                          // spreadRadius: 1/10000,
                           blurRadius: 8,
                           offset: Offset(0,2),
                         )
@@ -140,7 +132,6 @@ class _DideBanState extends State<DideBan> {
                        boxShadow: [
                          BoxShadow(
                            color: Color.fromRGBO(36, 109, 255, 0.25),
-                           // spreadRadius: 1/10000,
                            blurRadius: 8,
                            offset: Offset(0,2),
                          )
@@ -153,21 +144,11 @@ class _DideBanState extends State<DideBan> {
           ),
           Expanded(
               child: Padding(padding: EdgeInsets.only(
-                // left: (MediaQuery.of(context).size.width-301)/3,
-                // right: MediaQuery.of(context).size.width/6,
                 right: MediaQuery.of(context).size.width/15,
-                // left: MediaQuery.of(context).size.width/6,
                 left: MediaQuery.of(context).size.width/15,
-
-                // right: (MediaQuery.of(context).size.width-301)/3,
-                // left: 24.0,right: 24.0
               ),
 
                 child: Container(
-                  // color: Colors.green,
-                  // height: (MediaQuery.of(context).size.height-MediaQuery.of(context).size.height/12.35)/2,
-                  // height: (MediaQuery.of(context).size.height-MediaQuery.of(context).size.height/12.35)-((MediaQuery.of(context).size.height-MediaQuery.of(context).size.height/12.35)/2),
-                  // height: ((MediaQuery.of(context).size.height-MediaQuery.of(context).size.height/12.35)*3)/5,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
@@ -177,19 +158,13 @@ class _DideBanState extends State<DideBan> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           buildItems('assets/people_black_24dp.svg', 'لیست کاربران',usersList()),
-                          // SizedBox(width: (MediaQuery.of(context).size.width-334)/3),
-                          // SizedBox(width: (MediaQuery.of(context).size.width-309)/2,),
-                          // SizedBox(width: 16.0,),
                           buildItems('assets/quiz_black_24dp.svg', 'لیست سوالات',QuestionList()),
                         ],
                       ),
-                      // SizedBox(height: (MediaQuery.of(context).size.height-323-330)/3),
-                      // SizedBox(height: MediaQuery.of(context).size.height/30,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           buildItems('assets/request_page_black_24dp.svg', 'درخواست ها',Requests()),
-                          // SizedBox(width: 16.0,),
                           buildItems('assets/manage_accounts_black_24dp.svg', 'تنظیمات',DideBan()),
                         ],
                       ),
@@ -209,7 +184,6 @@ class _DideBanState extends State<DideBan> {
         child: Row(
           children: <Widget>[
             Container(
-              // height: 68.0,
               height: (MediaQuery.of(context).size.height-MediaQuery.of(context).size.height/12.35)/8.25,
               width: MediaQuery.of(context).size.width/2-(MediaQuery.of(context).size.width/15+1),
           child: Center(
@@ -219,7 +193,6 @@ class _DideBanState extends State<DideBan> {
                   Text(
                     rtTxt,
                     style: TextStyle(
-                      // fontSize: 16,
                       fontSize: MediaQuery.of(context).size.width/22.5,
                       color: HexColor('585858'),
                       fontFamily: 'IranianSans',
@@ -229,7 +202,6 @@ class _DideBanState extends State<DideBan> {
                   Text(
                     _farsi.replaceFarsiNumber(rtNunmber.toString()),
                     style: TextStyle(
-                      // fontSize: 18.0,
                       fontSize: MediaQuery.of(context).size.width/20.0,
                       color: HexColor('252525'),
                       fontFamily: 'IranianSans',
@@ -242,7 +214,6 @@ class _DideBanState extends State<DideBan> {
           ),
             Container(
               child: Divider(
-                // height: 40.0,
                 height: (MediaQuery.of(context).size.height-MediaQuery.of(context).size.height/12.35)/14,
                 thickness: 0.2,
                 color: HexColor('585858'),
@@ -310,9 +281,6 @@ class _DideBanState extends State<DideBan> {
                   border: Border.all(width: 3.0,color: HexColor('246DFF')),
                   borderRadius: BorderRadius.circular(8.0)
               ),
-
-              // height: 148,
-              // width: 148,
               height: (MediaQuery.of(context).size.height-(MediaQuery.of(context).size.height/12.35))/4.5,
               width: (MediaQuery.of(context).size.width)/2.5,
               child: Center(
@@ -327,7 +295,6 @@ class _DideBanState extends State<DideBan> {
                       style: TextStyle(
                         fontFamily: 'IranianSans',
                         fontStyle: FontStyle.normal,
-                        // fontSize: 20.0,
                         fontSize: (MediaQuery.of(context).size.width)/18,
                         color: HexColor('252525'),
                       ),
@@ -340,6 +307,5 @@ class _DideBanState extends State<DideBan> {
         )
     );
     }
-
   }
 

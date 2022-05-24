@@ -26,14 +26,11 @@ class _QuestionListState extends State<QuestionList> {
         backgroundColor: Colors.white,
         actions: [
           Container(
-            // height: MediaQuery.of(context).size.height/10,
             width: MediaQuery.of(context).size.width,
             child: Padding(
               padding: EdgeInsets.only(
                 left: MediaQuery.of(context).size.width/15,
                 right: MediaQuery.of(context).size.width/15,
-                // top: MediaQuery.of(context).size.height/30,
-                // bottom: MediaQuery.of(context).size.height/120,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -43,7 +40,6 @@ class _QuestionListState extends State<QuestionList> {
                     style: TextStyle(
                       color: HexColor('252525'),
                       fontSize: MediaQuery.of(context).size.width/22.5,
-                      // fontSize: 16.0,
                       fontFamily: 'IranianSans',
                     ),
                     textAlign: TextAlign.right,
@@ -56,8 +52,6 @@ class _QuestionListState extends State<QuestionList> {
                     },
                     child: SvgPicture.asset('assets/forward_black_24dp.svg',
                       height: MediaQuery.of(context).size.height/23,
-                      // height: 30,
-                      // width: 30,
                       width: MediaQuery.of(context).size.width/7,
                     ),
                   ),
@@ -95,12 +89,10 @@ class _QuestionListState extends State<QuestionList> {
         ),
       ),
       child: Container(
-        // height: 40.0,
         width: MediaQuery.of(context).size.width-(2*(MediaQuery.of(context).size.width/15)),
         child: Padding(
           padding: EdgeInsets.only(
             right: MediaQuery.of(context).size.width/30,
-              // top: 8.0,
             top: MediaQuery.of(context).size.height/87,
             bottom: MediaQuery.of(context).size.height/87,
           ),
@@ -109,7 +101,6 @@ class _QuestionListState extends State<QuestionList> {
             textAlign: TextAlign.right,
             style: TextStyle(
               fontFamily: 'IranianSans',
-              // fontSize: 14.0,
               fontSize: MediaQuery.of(context).size.width/25.75,
               color: HexColor('252525'),
             ),
@@ -117,8 +108,6 @@ class _QuestionListState extends State<QuestionList> {
 
         ),
       ),
-      // elevation: 8.0,
-      // shadowColor: HexColor('40246DFF'),
 
     );
   }
@@ -129,7 +118,6 @@ class _QuestionListState extends State<QuestionList> {
         Padding(padding: EdgeInsets.only(
           left: MediaQuery.of(context).size.width/15,
           right: MediaQuery.of(context).size.width/15,
-          // top: 10.0,
           top: MediaQuery.of(context).size.height/67,),
           child: Container(
             child: Question(input),
@@ -137,7 +125,6 @@ class _QuestionListState extends State<QuestionList> {
               boxShadow: [
                 BoxShadow(
                   color: Color.fromRGBO(36, 109, 255, 0.25),
-                  // spreadRadius: 1/10000,
                   blurRadius: 8,
                   offset: Offset(0,4),
                 )
